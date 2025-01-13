@@ -1,0 +1,118 @@
+/* Modal container */
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: opacity 0.35s ease-in;
+  pointer-events: none;
+  font-family: "Pixelify Sans", serif;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  pointer-events: none;
+  display: none;
+}
+
+.modal-overlay.open {
+  display: block;
+  pointer-events: auto;
+}
+
+.modal.open {
+  opacity: 1;
+}
+
+.modal.close {
+  opacity: 0;
+  display: none;
+}
+
+/* Modal content */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 5rem;
+  border-radius: 1.5rem;
+  background-color: #0075be;
+  color: #ffdd00;
+  pointer-events: auto;
+}
+
+/* Title and score text */
+.modal-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.modal-score {
+  font-size: 1.5rem;
+}
+
+/* Buttons */
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.retry-button {
+  font-size: 1.5rem;
+  border-radius: 1rem;
+  background-color: #38a169; /* Green */
+  padding: 0.5rem 1rem;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: "Pixelify Sans", serif;
+  font-weight: bold;
+}
+
+.retry-button:hover {
+  background-color: #2f855a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.retry-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 960px) {
+  .modal-content {
+    padding: 1.5rem 3rem;
+  }
+
+  .modal-title {
+    font-size: 2rem;
+  }
+
+  .modal-score {
+    font-size: 1.2rem;
+  }
+
+  .retry-button {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

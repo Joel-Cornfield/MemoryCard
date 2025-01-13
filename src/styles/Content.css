@@ -1,0 +1,16 @@
+/* Main content area */
+.content-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d03d33;
+    height: 100vh; /* Ensure full height to match layout */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 960px) {
+    .content-main {
+      align-items: flex-start; /* Align items to the top for smaller screens */
+    }
+  }
+  
